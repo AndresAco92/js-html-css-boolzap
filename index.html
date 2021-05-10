@@ -44,8 +44,7 @@
           <div 
                v-for= "(utente, index) in contacts"
                :style="(index === contacts.length - 1) ?'border:none': null"
-               :class="(index === posizion) ? 'active' : 'null'"
-               @click="posizion"
+               :class="(index === position) ? 'active' : 'null'"
                class="names"
           >
             <div class="logo_utente">
@@ -60,7 +59,8 @@
     <main class="right">
       <header>
         <div class="utente_send">
-          
+          <img :src="'img/avatar'+ contacts[position].avatar +'.jpg'"  alt="contacts.name">
+          <p>{{contacts[position].name}}</p>
         </div>
         <div class="settings_chat">
           <i class="fas fa-search icons"></i>
@@ -73,7 +73,7 @@
           <div class="line_1">
             <div class="sms_enter">
               <div class="txt">
-                <p>ahahha1</p>
+                <p>{{contacts[position].messages[0].text}}</p>
                 <span><i class="fas fa-chevron-down visibility"></i></span>
               </div>
               <div class="date">1010101</div>
@@ -82,7 +82,8 @@
           <div class="line_2">
             <div class="sms_exit">
               <div class="txt">
-                <p>ahahhahaha</p>
+               <p>{{contacts[position].messages[2].text}}</p>
+              </p>
                 <span><i class="fas fa-chevron-down visibility"></i></span>
               </div>
               <div class="date">1010101</div>
