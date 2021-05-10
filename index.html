@@ -43,25 +43,27 @@
 
           <div 
                v-for= "(utente, index) in contacts"
-               :style="(index === contacts.length - 1) ?'border:none': null"
+               :style="(index === contacts.length-1) ?'border-bottom:none': null"
                :class="(index === position) ? 'active' : 'null'"
-               @click="position"
+               @click="mouse(index)"
                class="names"
           >
             <div class="logo_utente">
               <img :src="'img/avatar'+ utente.avatar +'.jpg'"  alt="utente.name">
             </div>
-            <div class="nome_utente">{{utente.name}}</div>  
+            <div class="nome_utente">{{utente.name}}</div>
           </div>
         </div>
       </section>
     </aside>
-
     <main class="right">
       <header>
         <div class="utente_send">
           <img :src="'img/avatar'+ contacts[position].avatar +'.jpg'"  alt="contacts.name">
-          <p>{{contacts[position].name}}</p>
+          <div class="info">
+            <p>{{contacts[position].name}}</p>
+            <p class="data_utente">Ultima accesso ore: {{contacts[position].messages[2].date}}</p>
+          </div> 
         </div>
         <div class="settings_chat">
           <i class="fas fa-search icons"></i>
@@ -77,7 +79,7 @@
                 <p>{{contacts[position].messages[0].text}}</p>
                 <span><i class="fas fa-chevron-down visibility"></i></span>
               </div>
-              <div class="date">1010101</div>
+              <div class="date">{{contacts[position].messages[0].date}}</div>
             </div>
           </div>
           <div class="line_1">
@@ -86,7 +88,7 @@
                 <p>{{contacts[position].messages[1].text}}</p>
                 <span><i class="fas fa-chevron-down visibility"></i></span>
               </div>
-              <div class="date">1010101</div>
+              <div class="date">{{contacts[position].messages[1].date}}</div>
             </div>
           </div>
           <div class="line_2">
@@ -96,7 +98,7 @@
               </p>
                 <span><i class="fas fa-chevron-down visibility"></i></span>
               </div>
-              <div class="date">1010101</div>
+              <div class="date">{{contacts[position].messages[2].date}}</div>
             </div>
           </div>
         </div>
@@ -107,7 +109,6 @@
         <i class="fas fa-microphone"></i>
       </footer>
     </main>
-  
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>

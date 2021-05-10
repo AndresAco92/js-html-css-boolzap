@@ -4,7 +4,7 @@ const app = new Vue({
 
     nome: 'nome utente', 
     pic: '_vader',
-    position: '',
+    position: 0,
     contacts: [
       {
         name: 'Michele',
@@ -93,6 +93,10 @@ const app = new Vue({
     
   },
   methods:{
+
+    mouse(index){
+      this.position = index;
+    }
 
   }
 });
