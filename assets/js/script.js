@@ -4,8 +4,7 @@ const app = new Vue({
 
     nome: 'nome utente', 
     pic: '_vader',
-    position: 0,
-
+    position: '',
     contacts: [
       {
         name: 'Michele',
