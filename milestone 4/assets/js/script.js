@@ -115,7 +115,7 @@ const app = new Vue({
     },
     search_ut(valore){
       let person = valore.toLowerCase()
-      if(person.includes(this.contacts.name.toLowerCase()){
+      if(person.includes(this.contacts.name.toLowerCase())){
         
       }
     },
