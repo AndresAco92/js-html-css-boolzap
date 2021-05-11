@@ -1,10 +1,12 @@
 const app = new Vue({
   el: '#root',
-  data:{
+  data: {
 
     nome: 'nome utente', 
     pic: '_vader',
     position: 0,
+    messaggio:'',
+    date:dayjs().format('DD/MM/YYYY HH:mm:ss'),
     contacts: [
       {
         name: 'Michele',
@@ -89,14 +91,27 @@ const app = new Vue({
           }
         ],
       },
-    ]
-    
+    ] 
   },
-  methods:{
+  methods: {
 
     mouse(index){
       this.position = index;
-    }
-
+    },
+    messaggio_out(){
+      this.contacts[this.position].messages.push({
+        text: this.messaggio,
+        date: this.date,
+        status: 'sent'
+      });
+      setTimeout(()=>{
+        this.contacts[this.position].messages.push({
+          text: 'ok',
+          date: this.date,
+          status: 'received'
+        });
+      }, 1000);
+      this.messaggio = "";
+    },
   }
 });

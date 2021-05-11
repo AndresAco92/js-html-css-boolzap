@@ -1,0 +1,287 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+
+img{
+  width: 50px;
+  border-radius: 100%;
+  margin: 0 15px;
+}
+
+.icons{
+  color: #B1B1B1;
+  padding: 0 15px;
+}
+
+body{
+  min-width: 970px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+   linear-gradient(to bottom,
+   #249688 0px,
+   #249688 11%,
+   #DADBD4 11%,
+   #DADBD4 100%
+  );
+}
+
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+}
+
+.container .left,
+.container .right{
+  float: left;
+  height: 100%;
+}
+
+.container .left{
+  width: 35%;
+}
+
+.container .left .down,
+.container .left .up{
+  border-right: 2px solid #DADADA;
+}
+
+.container .left .up{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.container .left .up .profile,
+.container .left .up .settings{
+  float: left;
+  height: 100%;
+}
+
+.container .left .up .profile img{
+  width: 50px;
+  height: 52px;
+  border-radius: 100%;
+}
+
+.container .left .up .profile,
+.container .left .up .settings{
+  display: flex;
+  align-items: center;
+}
+
+.container .left .down{
+  height: calc(100% - 70px);
+}
+
+.container .left .down .notifiche{
+  background-color: #8EDBFC;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container .left .down .notifiche i{
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #8EDBFC;
+  line-height: 25px;
+}
+
+.container .left .down .notifiche .link{
+  font-size: 12px;
+  color: #6A7376;
+}
+
+.container .left .down .search{
+  background-color: #fff;
+  margin: 8px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.container .left .down .search input{
+ width: 90%;
+ margin-left: 15px;
+ height: 100%;
+ border: none;
+}
+
+.container .left .down .utenti{
+  background-color: #fff;
+  border-right: 1px solid #DADADA;
+  width: 100%;
+  overflow-y: scroll;
+  height: calc(100% - 126px);
+}
+
+.container .left .down .utenti .names{
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid #DADADA;
+}
+
+.container .left .down .utenti .names .last_mess{
+  font-size: 12px;
+  color: #DADADA;
+  margin-top: 10px;
+}
+
+.container .left .down .utenti .names:hover{
+ background-color: #F4F6F5;
+ cursor: pointer;
+}
+
+.container .left .down .utenti .active{
+  background-color: #259789;
+}
+
+
+.container .left .down .utenti .names img{
+  width: 70px;
+}
+
+.container .right{
+  width: 65%;
+}
+
+.container .left .up,
+.container .right header,
+.container .right footer{
+  height: 70px;
+}
+
+.container .right header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.container .right header .utente_send,
+.container .right header .settings_chat{
+ float: left; 
+ height: 100%;
+ display: flex;
+ align-items: center;
+}
+
+.container .right header .utente_send .info .data_utente{
+  color: #6A7376;
+  font-size: 12px;
+}
+
+.container .left .up .settings,
+.container .right header .settings_chat{
+  font-size: 25px;
+}
+
+
+.container .right section{
+  height: calc(100% - 140px);
+}
+
+.container .left .down,
+.container .right section{
+  background-color: #fafbfae8;
+}
+
+.container .right section .cover{
+  width: 100%;
+  height: 100%;
+  padding: 50px 90px;
+  background-image: url(../../img/mine.jpg);
+  overflow-y: scroll;
+}
+
+.container .right section .cover .line.sent{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.container .right section .cover .line.received{
+  display: flex;
+}
+
+.container .right section .cover .line{
+  width: 100%;
+}
+
+.container .right section .cover .line .sms{
+  border-radius: 10px;
+  padding: 15px 15px 20px;
+  position: relative;
+  min-width: 30%;
+  max-width: 60%;
+}
+
+.container .right section .cover .line.sent .sms{
+  background-color: #D6FABB;
+}
+
+.container .right section .cover .line.received .sms{
+  background-color: #fff;
+}
+
+.container .right section .cover .line .sms i{
+  display: none;
+  padding: 5px;
+}
+
+.container .right section .cover .line .sms:hover i{
+  display: inline;
+}
+
+.container .right section .cover .date{
+  font-size: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+  color: #B6B9BB;
+}
+
+.container .right section .cover .txt{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.container .left .up,
+.container .right header{
+  background-color: #EAEAEA;
+}
+
+.container .right footer{
+  background-color: #F3EEEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.container .right footer i{
+  color: #6A7376;
+  font-size: 30px;
+}
+
+.container .right footer input{
+ height: 100%;
+ border: none;
+ border-radius: 5px;
+ width: 85%;
+ padding: 15px;
+}
