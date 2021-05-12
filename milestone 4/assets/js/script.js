@@ -6,6 +6,7 @@ const app = new Vue({
     pic: '_vader',
     position: 0,
     messaggio:'',
+    utente:'',
     date:dayjs().format('DD/MM/YYYY HH:mm:ss'),
     contacts: [
       {
@@ -114,10 +115,14 @@ const app = new Vue({
       this.messaggio = "";
     },
     search_ut(valore){
-      let person = valore.toLowerCase()
-      if(person.includes(this.contacts.name.toLowerCase())){
-        
-      }
+      let person = valore.toLowerCase();
+      this.contacts.forEach((contact) => {
+        if(contact.name.toLowerCase().includes(person)){
+          contact.visible = true;
+        }else{
+          contact.visible = false;
+        }
+      });
     },
   }
 });

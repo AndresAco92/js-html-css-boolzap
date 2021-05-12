@@ -15,6 +15,7 @@ img{
 .icons{
   color: #B1B1B1;
   padding: 0 15px;
+  cursor: pointer;
 }
 
 body{
@@ -118,6 +119,7 @@ body{
  margin-left: 15px;
  height: 100%;
  border: none;
+ padding: 0 5px;
 }
 
 .container .left .down .utenti{
@@ -244,6 +246,7 @@ body{
 
 .container .right section .cover .line .sms:hover i{
   display: inline;
+  cursor: pointer;
 }
 
 .container .right section .cover .date{
@@ -276,6 +279,7 @@ body{
 .container .right footer i{
   color: #6A7376;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .container .right footer input{

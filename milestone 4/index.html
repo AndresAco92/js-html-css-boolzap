@@ -37,12 +37,15 @@
         </div>
         <div class="search">
           <i class="fas fa-search icons"></i>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input v-model="utente"
+                 @keyup.enter="search_ut(utente)" 
+                 type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="utenti">
 
           <div 
                v-for= "(utente, index) in contacts"
+               v-if="utente.visible === true"
                :style="(index === contacts.length - 1) ?'border-bottom:none': null"
                :class="(position === index) ? 'active' : 'null'"
                @click="mouse(index)"
@@ -65,7 +68,7 @@
           <img :src="'img/avatar'+ contacts[position].avatar +'.jpg'"  alt="contacts.name">
           <div class="info">
             <p>{{contacts[position].name}}</p>
-            <p class="data_utente">Ultima accesso ore: {{contacts[position].messages[position].date}}</p>
+            <p class="data_utente">Ultima accesso ore: {{date}}</p>
           </div> 
         </div>
         <div class="settings_chat">
