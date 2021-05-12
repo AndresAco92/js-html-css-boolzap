@@ -2,12 +2,12 @@ const app = new Vue({
   el: '#root',
   data: {
 
-    nome: 'nome utente', 
+    nome: 'Dart Fener', 
     pic: '_vader',
     position: 0,
     messaggio:'',
     utente:'',
-    date:dayjs().format('DD/MM/YYYY HH:mm:ss'),
+    active_box: true,
     contacts: [
       {
         name: 'Michele',
@@ -100,15 +100,17 @@ const app = new Vue({
       this.position = index;
     },
     messaggio_out(){
-      this.contacts[this.position].messages.push({
-        text: this.messaggio,
-        date: this.date,
-        status: 'sent'
-      });
+      if(this.messaggio.length > 0){
+        this.contacts[this.position].messages.push({
+          text: this.messaggio,
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          status: 'sent'
+        });
+      }
       setTimeout(()=>{
         this.contacts[this.position].messages.push({
           text: 'ok',
-          date: this.date,
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           status: 'received'
         });
       }, 1000);
@@ -124,5 +126,16 @@ const app = new Vue({
         }
       });
     },
+    last_acc(index){
+      let contact_sms = this.contacts[index].messages
+      return contact_sms[contact_sms.length-1].date;
+    },
+    last_sms(index){
+      let contact_sms = this.contacts[index].messages
+      return contact_sms[contact_sms.length-1].text;
+    },
+    min_menu(){
+      this.active_box = !this.active_box;
+    }
   }
 });

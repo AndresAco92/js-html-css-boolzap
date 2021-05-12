@@ -135,12 +135,20 @@ body{
   padding: 10px;
   display: flex;
   border-bottom: 1px solid #DADADA;
+  position: relative;
 }
 
-.container .left .down .utenti .names .last_mess{
+.container .left .down .utenti .names .last_mess,
+.container .left .down .utenti .names .last_time{
   font-size: 12px;
   color: #DADADA;
   margin-top: 10px;
+}
+
+.container .left .down .utenti .names .last_time{
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 
 .container .left .down .utenti .names:hover{
@@ -225,7 +233,7 @@ body{
 
 .container .right section .cover .line .sms{
   border-radius: 10px;
-  padding: 15px 15px 20px;
+  padding: 15px 30px 20px 10px;
   position: relative;
   min-width: 30%;
   max-width: 60%;
@@ -242,11 +250,33 @@ body{
 .container .right section .cover .line .sms i{
   display: none;
   padding: 5px;
+  right: 5px;
+  position: absolute;
 }
 
 .container .right section .cover .line .sms:hover i{
   display: inline;
   cursor: pointer;
+}
+
+.container .right section .cover .line .sms .add_box{
+  background-color: #fff;
+  position: absolute;
+  right: 14px;
+  bottom: -50px;
+  width: 120px;
+  padding: 10px;
+  height: 60px;
+  font-size: 14px;
+  line-height: 20px;
+  z-index: 10;
+  border-radius: 10px 0 10px 10px;
+  box-shadow: 2px 3px 2px  rgba(0,0,0,.4);
+  display: none;
+}
+
+.container .right section .cover .line .sms .add_box.disp_in{
+  display: inline;
 }
 
 .container .right section .cover .date{
@@ -261,7 +291,6 @@ body{
   display: flex;
   justify-content: space-between;
 }
-
 
 .container .left .up,
 .container .right header{

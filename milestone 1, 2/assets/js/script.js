@@ -2,7 +2,7 @@ const app = new Vue({
   el: '#root',
   data: {
 
-    nome: 'nome utente', 
+    nome: 'Dart Fener', 
     pic: '_vader',
     position: 0,
     messaggio:'',
