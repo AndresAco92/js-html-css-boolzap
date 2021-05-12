@@ -252,11 +252,11 @@ body{
   padding: 5px;
   right: 5px;
   position: absolute;
+  cursor: pointer;
 }
 
 .container .right section .cover .line .sms:hover i{
   display: inline;
-  cursor: pointer;
 }
 
 .container .right section .cover .line .sms .add_box{
@@ -273,10 +273,15 @@ body{
   border-radius: 10px 0 10px 10px;
   box-shadow: 2px 3px 2px  rgba(0,0,0,.4);
   display: none;
+  text-align: center;
 }
 
 .container .right section .cover .line .sms .add_box.disp_in{
   display: inline;
+}
+.container .right section .cover .line .sms .add_box.disp_in p:hover{
+  text-decoration: underline;
+  transform: scale(1.1,1.1);
 }
 
 .container .right section .cover .date{

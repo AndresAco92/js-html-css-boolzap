@@ -98,7 +98,9 @@
                           :class="(active_box === true) ? 'disp_in': 'null'"
                      >
                       <p>Message info</p>
-                      <p>Delete message</p>
+                      <p @click="delete_sms(message)"
+                      > Delete message
+                      </p>
                      </div>
                   </i>
                 </span>
